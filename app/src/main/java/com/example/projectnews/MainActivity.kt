@@ -50,7 +50,7 @@ class MainActivity : AppCompatActivity(), OnItemClicked {
                     val newsVerticalView = findViewById<RecyclerView>(R.id.newsVerticalView)
                     newsVerticalView.layoutManager =
                         LinearLayoutManager(applicationContext, RecyclerView.VERTICAL, false)
-                    val adapter = NewsVerticalAdapter()
+                    val adapter = NewsVerticalAdapter(this@MainActivity)
                     adapter.submitList(dataSet)
                     newsVerticalView.adapter = adapter
                 } else {

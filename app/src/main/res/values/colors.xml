@@ -8,9 +8,16 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
 
-    <color name="primary_200">#93caf0</color>
-    <color name="primary_500">#3397e2</color>
-    <color name="primary_700">#2278c3</color>
-    <color name="secondary_200">#fcf6a9</color>
-    <color name="secondary_700">#fbca54</color>
+    <color name="primary_200">#ff6c6b</color>
+    <color name="primary_500">#ef3340</color>
+    <color name="primary_700">#b50019</color>
+    <color name="secondary_200">#fffffd</color>
+    <color name="secondary_500">#ffddca</color>
+    <color name="secondary_700">#cbab99</color>
 </resources>
+
+<!--<color name="primary_200">#93caf0</color>-->
+<!--<color name="primary_500">#3397e2</color>-->
+<!--<color name="primary_700">#2278c3</color>-->
+<!--<color name="secondary_200">#fcf6a9</color>-->
+<!--<color name="secondary_700">#fbca54</color>-->

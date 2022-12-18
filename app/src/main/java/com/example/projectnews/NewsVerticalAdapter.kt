@@ -75,7 +75,7 @@ import java.net.URI
 //    }
 //}
 
-class NewsVerticalAdapter:ListAdapter<Data, NewsViewHolder>(DiffCallback){
+class NewsVerticalAdapter(val onItemClicked: OnItemClicked):ListAdapter<Data, NewsViewHolder>(DiffCallback){
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): NewsViewHolder {
         val binding = NewsItemBinding.inflate(LayoutInflater.from(parent.context),parent,false)
         return NewsViewHolder(binding)
@@ -83,6 +83,18 @@ class NewsVerticalAdapter:ListAdapter<Data, NewsViewHolder>(DiffCallback){
 
     override fun onBindViewHolder(holder: NewsViewHolder, position: Int) {
         holder.viewDataBinding.newsModel = getItem(position)
+        holder.viewDataBinding.cv.setOnClickListener(){
+            if(holder.viewDataBinding.textToDisplayNews.visibility == View.GONE) {
+                holder.viewDataBinding.textToDisplayNews.visibility = View.VISIBLE
+                holder.viewDataBinding.readMoreBtn.visibility = View.VISIBLE
+            } else {
+                holder.viewDataBinding.textToDisplayNews.visibility = View.GONE
+                holder.viewDataBinding.readMoreBtn.visibility = View.GONE
+            }
+        }
+        holder.viewDataBinding.readMoreBtn.setOnClickListener{
+            onItemClicked.onItemClicked(getItem(position))
+        }
     }
 
 }
