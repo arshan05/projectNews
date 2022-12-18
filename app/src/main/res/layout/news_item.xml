@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="newsModel"
+            type="com.example.projectnews.Data" />
+    </data>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:animateLayoutChanges="true"
+        android:elevation="14dp"
+        android:id="@+id/cv"
+        android:layout_margin="10dp"
+        app:cardCornerRadius="10dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_margin="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                imageFromUrl="@{newsModel.images}"
+                android:id="@+id/imageToDisplay" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/textToDisplayTitle"
+                android:layout_marginHorizontal="10dp"
+                android:textStyle="bold"
+                android:textSize="18sp"
+                android:text="@{newsModel.title}"
+                android:textColor="@color/black" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/textToDisplayNews"
+                android:text="@{newsModel.decription}"
+                android:layout_marginHorizontal="10dp"
+                android:visibility="gone"
+                android:textColor="@color/black"
+                android:textSize="14sp" />
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/readMoreBtn"
+                android:text="Read More"
+                android:visibility="gone"
+                android:layout_marginHorizontal="10dp"
+                android:textAllCaps="false" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/textToDisplayAuthor"
+                android:textSize="12sp"
+                android:text="@{newsModel.author}"
+                android:textColor="#4E4E4E"
+                android:gravity="end"
+                android:layout_marginHorizontal="10dp"
+                android:layout_marginBottom="10dp" />
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+</layout>
